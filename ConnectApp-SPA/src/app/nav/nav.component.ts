@@ -18,10 +18,14 @@ export class NavComponent implements OnInit {
 
   login() {
     this.authService.login(this.model).subscribe(next => {
+      // Success Option (First Option)
         this.alertify.success('Logged in successfully');
       }, error => {
+        // Error Option (Second Option)
         this.alertify.error(error);
       }, () => {
+        // Complete Option (Third Option)
+        // After login straight redirection to members component html
         this.router.navigate(['/members']);
       });
   }
