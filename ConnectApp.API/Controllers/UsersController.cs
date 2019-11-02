@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ConnectApp.API.Data;
 using ConnectApp.API.Dtos;
+using ConnectApp.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConnectApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
